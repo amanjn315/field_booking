@@ -1,0 +1,53 @@
+{% extends "basic_app/base.html" %}
+{% block body_block %}
+
+  <div style="overflow-x:auto; overflow-y:auto;">
+    <h2>List of Requests</h2>
+    <p>Click on 'Accept' to approve and on 'Reject' to disapprove</p>
+    <table class="table">
+      <thead>
+        <tr>
+          <th>NAME</th>
+          <th>ROLL</th>
+          <th>MOB.</th>
+          <th>EMAIL</th>
+          <th>FIELD</th>
+          <th>DATE</th>
+          <th>TIME</th>
+          <th>PURPOSE</th>
+          <th>STATUS</th>
+          <th></th>
+        </tr>
+      </thead>
+      {% if field_record %}
+        <tbody>
+          {% for list in field_record %}
+          <tr>
+            <td>{{list.name}}</td>
+            <td>{{list.roll}}</td>
+            <td>{{list.Mobile_number}}</td>
+            <td>{{list.email}}</td>
+            <td>{{list.field}}</td>
+            <td>{{list.date}}</td>
+            <td>{{list.ftime}} to {{list.ttime}}</td>
+            <td>{{list.purpose}}</td>
+
+              <form class="" action="index.html" method="post">
+                <td name="status">{{list.status}}</td>
+                <td>
+                  <input id="approve" type="submit" name="on_click" class="btn btn-default" value="Accept">
+                  <p></p>
+                  <input id="disapprove" type="submit" name="on_click" class="btn btn-default" value="Reject">
+                </td>
+              </form>
+
+          </tr>
+          {% endfor %}
+        </tbody>
+    </table>
+      {% else %}
+        <p>No Record Found!</p>
+  </div>
+      {% endif %}
+
+{% endblock %}

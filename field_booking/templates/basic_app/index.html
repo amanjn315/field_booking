@@ -1,0 +1,15 @@
+{% extends "basic_app/base.html" %}
+{% block body_block%}
+
+<h1>Please read the instructions carefully</h1>
+<ol>
+  <li>The student must fills in his details, the purpose for booking and the time slot for which he
+    wants to book the field.</li>
+  <li>The slot timing to book a ground will start from 6 AM to 9 AM and 5 PM to 10 PM every
+    day. Each slot should be of half an hour. A student can request multiple slots in a single request.
+  </li>
+  <li>Students must see which slots are free and which are booked. And fill the details accordingly.</li>
+  <li>For Multiple slots, book the form multiple number of times.</li>
+</ol>
+<h2><a href="{% url 'basic_app:register' %}">Click Here</a> to go to registration page.</h2>
+{% endblock %}

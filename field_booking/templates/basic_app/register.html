@@ -1,0 +1,16 @@
+{% extends "basic_app/base.html" %}
+{% load crispy_forms_tags %}
+
+{% block body_block %}
+
+<h1>Sports Field Booking Portal.</h1>
+<h2>Please fill in the details to book a field.</h2>
+<p><a href="{% url 'index' %}">Click Here</a> to know the details for Booking the field.</p>
+
+  <form method="POST">
+      {% csrf_token %}
+      {{ form|crispy }}
+      <input type="submit" class='btn btn-primary' value="Submit">
+  </form>
+
+{% endblock %}
